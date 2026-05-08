@@ -22,7 +22,7 @@ function App() {
               กรุณารอการตรวจสอบข้อมูล
             </p>
             <p className="mt-1 text-xl font-bold leading-8 text-[var(--color-primary-dark)]">
-              20-30 นาที
+              10-20 นาที
             </p>
           </div>
         </div>
