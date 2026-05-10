@@ -9,6 +9,8 @@
 
 ## Run
 
+Use Node.js 24.x.
+
 ```bash
 npm install
 npm run dev
