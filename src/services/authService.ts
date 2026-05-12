@@ -5,8 +5,6 @@ export type RegisteredMember = {
   status?: 'pending' | 'approved' | 'rejected' | string
 }
 
-const productionApiBaseUrl =
-  'https://mikijapan-api-production-7e32.up.railway.app/api'
 const devApiBaseUrl = 'http://localhost:8080/api'
 
 const getApiBaseUrl = () => {
@@ -15,7 +13,11 @@ const getApiBaseUrl = () => {
     return configuredBaseUrl.replace(/\/+$/, '')
   }
 
-  return import.meta.env.DEV ? devApiBaseUrl : productionApiBaseUrl
+  if (import.meta.env.DEV) {
+    return devApiBaseUrl
+  }
+
+  throw new Error('Missing VITE_API_BASE_URL for production build')
 }
 
 const getLineHeaders = (lineIdentity?: LineIdentity) => {
